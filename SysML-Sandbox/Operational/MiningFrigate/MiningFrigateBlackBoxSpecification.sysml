@@ -494,31 +494,7 @@
             }
         }
     }
-    package DependenciesToUseCases {
-        doc/*
-        * trace the activities identified in the Operational Use Cases with the activities defined 
-        * at the Mining Frigate Blackbox.
-        * A dependency states that the "from end" of the dependency needs the "to end" to be specified.
-        */
-        private import MinigFrigateConfigurations;
 
-        dependency MinigFrigateConfigurations::highSecMiningFrigate::highSecMiningFrigateStates::highSecStartUpSequence::initializeHighPowerModule1 
-            to SystemUseCases::MineAsteroids::highSecMiningFrigate::activateMiningLaser;
-        dependency MinigFrigateConfigurations::highSecMiningFrigate::highSecMiningFrigateStates::highSecStartUpSequence::initializeHighPowerModule2  
-            to SystemUseCases::MineAsteroids::highSecMiningFrigate::activateMiningLaser;
-        dependency MinigFrigateConfigurations::highSecMiningFrigate::highSecMiningFrigateStates::initializeScanSpaceServices::directionalScan
-            to SystemUseCases::MonitorAndDetectThreats::highSecMiningFrigate::scanSpace;
-        dependency MinigFrigateConfigurations::highSecMiningFrigate::highSecMiningFrigateStates::prepareForWarp
-            to SystemUseCases::WarpToCelestial::highSecMiningFrigate::executeWarpDrive;
-        dependency MinigFrigateConfigurations::highSecMiningFrigate::highSecMiningFrigateStates::initializeNavigationServices::approachSignatureAtRange
-            to SystemUseCases::ApproachSignature::highSecMiningFrigate::approachSignature;
-        dependency MinigFrigateConfigurations::highSecMiningFrigate::highSecMiningFrigateStates::initializeNavigationServices::dockInStation
-            to SystemUseCases::DockToStation::highSecMiningFrigate::dockInStation;
-        dependency MinigFrigateConfigurations::highSecMiningFrigate::highSecMiningFrigateStates::initializeDroneServices
-            to SystemUseCases::DeployDefenseDrones;
-        dependency MinigFrigateConfigurations::highSecMiningFrigate::highSecMiningFrigateStates::transferOre
-            to SystemUseCases::TransferOre;
-    }
     package ViewsAndViewDefinitions {
 
         private import VariationDefinition;
